@@ -1,0 +1,43 @@
+.Contact_List_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.Contact_List {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 5px 10px gainsboro;
+  align-items: center;
+  height: 60px;
+  width: 270px;
+  margin-top: 20px;
+}
+.Contact_List-pic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.Contact_List-name {
+  height: 60px;
+  width: 190px;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  padding-top: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+.Contact_List-pic img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.Contact_List_trash {
+  width: 20px;
+  margin-top: 10px;
+}
