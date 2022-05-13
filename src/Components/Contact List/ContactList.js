@@ -1,32 +1,43 @@
 import React from "react";
 import "../Contact List/ContactList.css";
 
-export default function ContactList() {
-  return (
-    <div className="container Contact_List_wrapper">
-      <h1>Contact List</h1>
-      <div className="Contact_List shadow p-3 mb-5 bg-white rounded">
-        <div className="Contact_List-pic">
-          <img src="https://placeimg.com/640/480/any" />
-        </div>
-        <div className="Contact_List-name"> Jack Daniels</div>
-        <div className="Contact_List_trash">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            class="bi bi-trash"
-            viewBox="0 0 16 16"
-          >
-            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-            <path
-              fill-rule="evenodd"
-              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
-            />
-          </svg>
+export default function ContactList(props) {
+  console.log(props.contacts[0].name);
+  const displayContacts = props.contacts.map((val, index, array) => {
+    return (
+      <div className="container Contact_List_wrapper">
+        <div className="Contact_List shadow p-3 mb-2 bg-white rounded">
+          <div className="Contact_List-pic">
+            <img src="https://placeimg.com/640/480/any" />
+          </div>
+          <div className="Contact_List-name">{val.name}</div>
+          <div className="Contact_List_trash">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+              <path
+                fill-rule="evenodd"
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+    );
+
+    console.log(val.name);
+  });
+
+  return (
+    <>
+      <h1 className="contactlistHeader">Contact Lists</h1>
+      <div className="contactHeading">{displayContacts}</div>
+    </>
   );
 }
